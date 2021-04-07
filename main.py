@@ -44,7 +44,7 @@ def get_company_name(symbol):
         return 'Infosys'
     elif symbol == 'BHARTIARTL':
         return 'Airtel'
-    elif symbol == 'HDFCBank':
+    elif symbol == 'HDFCBANK':
         return 'HDFC Bank'
     elif symbol == 'RELIANCE':
         return 'Reliance'
@@ -53,6 +53,7 @@ def get_company_name(symbol):
     elif symbol == 'TITAN':
         return 'Titan'
     else:
+        print(symbol)
         'None'
 
 
@@ -74,7 +75,7 @@ def get_data(symbol, start, end):
         df = pd.read_csv('https://raw.githubusercontent.com/Aum020/Stock-Market-Analysis/master/Datasets/INFY.NS.csv?token=AOAVBUGERDG23TAKJTSRUTLAO3666')
     elif symbol.upper() == 'BHARTIARTL':
         df = pd.read_csv('https://raw.githubusercontent.com/Aum020/Stock-Market-Analysis/master/Datasets/BHARTIARTL.NS.csv?token=AOAVBUHOT54UB4WDVRQOCZ3AO37J4')
-    elif symbol.upper() == 'HDFCBank':
+    elif symbol.upper() == 'HDFCBANK':
         df = pd.read_csv('https://raw.githubusercontent.com/Aum020/Stock-Market-Analysis/master/Datasets/HDFCBANK.NS%20(1).csv?token=AOAVBUARO6P77KO3ERGMQ6DAO37OE')
     elif symbol.upper() == 'RELIANCE':
         df = pd.read_csv('https://raw.githubusercontent.com/Aum020/Stock-Market-Analysis/master/Datasets/ril(1).csv?token=AOAVBUEUAFZF73CJWMJTOUDAO37SI')
@@ -108,8 +109,9 @@ start, end, symbol = get_input()
 # Get the data
 df = get_data(symbol,start,end)
 #Get the company name
+print(symbol)
 company_name = get_company_name(symbol.upper())
-
+print("Company name is ",company_name)
 #Display the close price
 st.header(company_name+' Close\n')
 st.line_chart(df['Close'])
