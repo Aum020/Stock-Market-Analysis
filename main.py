@@ -3,10 +3,8 @@
 
 # Import the libraries
 import streamlit as st
-import requests
 import pandas as pd
 from PIL import Image
-from io import BytesIO
 
 st.write("""
 # Stock Market Web Application
