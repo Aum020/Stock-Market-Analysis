@@ -3,15 +3,16 @@
 
 # Import the libraries
 import streamlit as st
+import requests
 import pandas as pd
 from PIL import Image
+from io import BytesIO
 
 st.write("""
 # Stock Market Web Application
 **Visually** shows the stock data for various companies!
 """)
-
-image = Image.open("/home/aum/PycharmProjects/Stock-Market-WebApp/Stock.jpeg")
+image = Image.open("Stock.jpeg")
 st.image(image, use_column_width=True)
 
 # Create a sidebar header
